@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Espada mágica",
+            "price": 2000,
+            "count": 1,
+            "aparace": "n"
+        },
+        {
+            "id": 2,
+            "name": "Poção de vida",
+            "price": 2.99,
+            "count": 1,
+            "aparace": "n"
+        },
+        {
+            "id": 3,
+            "name": "Sanduíche revigorante",
+            "price": 29.99,
+            "count": 1,
+            "aparace": "n"
+        }
+    ]
+}
