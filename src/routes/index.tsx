@@ -5,7 +5,7 @@ import { CartProducts } from "../components/cart-products";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/pizza-delivery" element={<Home />} />
       <Route path="/cart-products" element={<CartProducts />} />
     </Routes>
   );
