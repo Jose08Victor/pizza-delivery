@@ -2,24 +2,84 @@
     "data": [
         {
             "id": 1,
-            "name": "Espada mágica",
-            "price": 2000,
-            "count": 1,
-            "aparace": "n"
+            "name": "Pizza de Calabresa",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/cheese-pizza.jpg",
+            "description": "Compre nossa Pizza de Calabresa Clássica com molho e crosta de sua escolha.",
+            "price": 30.79,
+            "quantity": 1,
+            "onAList": false
         },
         {
             "id": 2,
-            "name": "Poção de vida",
-            "price": 2.99,
-            "count": 1,
-            "aparace": "n"
+            "name": "Pizza de Mussarela",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/mozarrela-pizza.jpg",
+            "description": "Molho picante caseiro secreto, com pedaços de tomate e mussarela fresca.",
+            "price": 27.99,
+            "quantity": 1,
+            "onAList": false
         },
         {
             "id": 3,
-            "name": "Sanduíche revigorante",
+            "name": "Pizza Grelhada",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/grilled-pizza.jpg",
+            "description": "Tomate, cebola, pimentão verde e frango grelhado ou frito.",
             "price": 29.99,
-            "count": 1,
-            "aparace": "n"
+            "quantity": 1,
+            "onAList": false
+        },
+        {
+            "id": 4,
+            "name": "Pizza de Frango com Catupiry",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/catupiry-and-chicken-pizza.jpg",
+            "description": "Molho caseiro, orégano, frango desfiado e catupiry.",
+            "price": 26.99,
+            "quantity": 1,
+            "onAList": false
+        },
+        {
+            "id": 5,
+            "name": "Pizza de Salami",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/salami-pizza.jpg",
+            "description": "Molho de tomate, mussarela, salami fresco e orégano.",
+            "price": 31.19,
+            "quantity": 1,
+            "onAList": false
+        },
+        {
+            "id": 6,
+            "name": "Pizza de Marguerita",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/margherita-pizza.jpg",
+            "description": "Molho caseiro, manjericão, mussarela, alho e orégano.",
+            "price": 28.99,
+            "quantity": 1,
+            "onAList": false
+        },
+        {
+            "id": 7,
+            "name": "Pizza de Camarão",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/shrimp-pizza.jpg",
+            "description": "Molho de tomate, camarão fresco, cebola, azeitonas pretas e pimentão verde.",
+            "price": 26.99,
+            "quantity": 1,
+            "onAList": false
+        },
+        {
+            "id": 8,
+            "name": "Pizza Vegetariana",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/vegetarian-pizza.jpg",
+            "description": "Molho de tomate, mussarela, rúcula, cebola, cogumelos frescos, tomate e azeitonas pretas.",
+            "price": 35.59,
+            "quantity": 1,
+            "onAList": false
+        },
+        {
+            "id": 9,
+            "name": "Pizza Vegana",
+            "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/veggie-pizza.jpg",
+            "description": "Azeitonas pretas, manjericão, cebola roxa, cogumelos e tomate.",
+            "price": 36.99,
+            "quantity": 1,
+            "onAList": false
         }
     ]
 }
