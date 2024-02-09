@@ -1,7 +1,7 @@
 import { Header } from "./components/header";
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./routes";
-import './App.module.css'
+import './App.scss'
 import { ThemeProvider } from "./product-context";
 
 function App() {
