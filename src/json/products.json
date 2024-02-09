@@ -14,7 +14,7 @@
             "name": "Pizza de Mussarela",
             "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/mozarrela-pizza.jpg",
             "description": "Molho picante caseiro secreto, com pedaços de tomate e mussarela fresca.",
-            "price": 27.99,
+            "price": 26.99,
             "quantity": 1,
             "onAList": false
         },
@@ -32,7 +32,7 @@
             "name": "Pizza de Frango com Catupiry",
             "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/catupiry-and-chicken-pizza.jpg",
             "description": "Molho caseiro, orégano, frango desfiado e catupiry.",
-            "price": 26.99,
+            "price": 27.99,
             "quantity": 1,
             "onAList": false
         },
@@ -59,7 +59,7 @@
             "name": "Pizza de Camarão",
             "image": "https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/shrimp-pizza.jpg",
             "description": "Molho de tomate, camarão fresco, cebola, azeitonas pretas e pimentão verde.",
-            "price": 26.99,
+            "price": 32.49,
             "quantity": 1,
             "onAList": false
         },
