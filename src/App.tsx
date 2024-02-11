@@ -1,9 +1,9 @@
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { BrowserRouter } from "react-router-dom";
-import { AppRoutes } from "./routes";
+import { AppRoutes } from "./pages";
 import './App.scss'
-import { ThemeProvider } from "./product-context";
+import { ThemeProvider } from "./context";
 
 function App() {
   return (
