@@ -1,18 +1,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faPizzaSlice, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
-import "./style.scss"
+import { useContext } from "react";
+import { ThemeContext } from "../../context";
+import "./style.scss";
 
 export const CartProductsCounter = () => {
-  
-    return (
-      <div className="products-list">
-        <NavLink to="/cart-products">
-          <p>Meu Pedido</p>
-          <FontAwesomeIcon icon={faCartPlus} />
-          {/* <FontAwesomeIcon icon={faPizzaSlice} /> */}
-          <span></span>
-        </NavLink>
-      </div>
-    );
-  };
+  const { theme }: any = useContext(ThemeContext);
+
+  let counter: number = 0;
+
+  theme.map((product: any) => {
+    if (product.onAList === true) {
+      counter++
+    }
+  })
+
+  return (
+    <div className="products-list">
+      <NavLink to="/cart-products">
+        <p>Meus Pedidos</p>
+
+        <FontAwesomeIcon icon={faCartPlus} />
+
+        <span>{counter}</span>
+      </NavLink>
+    </div>
+  );
+};
