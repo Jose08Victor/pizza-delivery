@@ -1,0 +1,229 @@
+section {
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 15px;
+    max-width: 75%;
+    margin: 0 auto 20px;
+
+    button {
+        background-color: #222;
+        color: #eee;
+        border: 1px solid transparent;
+        font-weight: 700;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background-color: #eee;
+            color: #222;
+            border: 1px solid #222;
+            cursor: pointer;
+        }
+    }
+
+    .added-order {
+        li {
+            display: flex;
+            padding: 15px;
+            margin: 0 20px;
+            border-bottom: 1px solid #222;
+
+            .order-item {
+                width: 20%;
+                text-align: center;
+
+                h3 {
+                    font-weight: 500;
+                    font-size: 17px;
+                    margin-bottom: 10px;
+                }
+
+                img {
+                    width: 120px;
+                    height: 120px;
+                    object-fit: cover;
+                    border-radius: 15px;
+                }
+            }
+
+            .order-price {
+                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                div {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    button {
+                        font-size: 20px;
+                        width: 25px;
+                    }
+
+                    span {
+                        font-weight: 500;
+                        font-size: 17px;
+                    }
+                }
+
+                p {
+                    font-size: 26px;
+                    font-weight: 700;
+                }
+
+                .remove-btn {
+                    padding: 6px;
+                }
+            }
+        }
+    }
+
+
+    .send-the-order {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 30px;
+
+
+        button {
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 26px;
+            font-weight: 700;
+            border-bottom: 1px solid #222;
+            padding-bottom: 5px;
+
+            span {
+                font-size: 30px;
+                font-weight: 900;
+                padding-left: 12px;
+            }
+        }
+    }
+
+    @media (max-width: 890px) {
+        max-width: 100%;
+    }
+
+    @media (max-width: 670px) {
+        .added-order {
+            li {
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                margin: 0 10px;
+
+                .order-item,
+                .order-price {
+                    width: auto;
+                }
+
+                .order-item {
+                    h3 {
+                        max-width: 140px;
+                        font-size: 15px;
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 80px;
+                        object-fit: cover;
+                        border-radius: 15px;
+                    }
+                }
+
+                .order-price {
+                    flex-direction: column;
+                    padding-top: 28px;
+                    gap: 10px;
+                    position: relative;
+
+                    div {
+                        gap: 8px;
+
+                        button {
+                            font-size: 15px;
+                            width: 20px;
+                        }
+
+                        span {
+                            font-size: 16px;
+                        }
+                    }
+
+                    p {
+                        position: absolute;
+                        top: -8px;
+                        font-size: 21px;
+                    }
+
+                    .remove-btn {
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+
+        .send-the-order {
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px;
+
+            button {
+                padding: 10px;
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 22px;
+
+                span {
+                    font-size: 26.5px;
+                }
+            }
+        }
+    }
+}
+
+.return-to-menu {
+    max-width: 550px;
+    height: 400px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    background: url("https://raw.githubusercontent.com/Jose08Victor/pizza-delivery/main/src/assets/empty-pizza-box.png") no-repeat center;
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+
+    a {
+        position: absolute;
+        color: #fff;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        text-align: center;
+        padding: 6px;
+        font-size: 25px;
+        font-weight: 700;
+        top: 32%;
+        line-height: 45px;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1) translateX(-45%);
+        }
+    }
+
+    @media (max-width: 475px) {
+        a {
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+}
