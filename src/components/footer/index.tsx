@@ -20,7 +20,7 @@ export const Footer = () => {
                 </p>
 
                 <p>
-                    <strong>Sunday</strong>
+                    <strong>Domingo</strong>
                     <br /> 10am – 6pm
                 </p>
             </div>
