@@ -1,21 +1,19 @@
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
+import { AppProvider } from './context';
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./pages";
-import './App.scss'
-import { ThemeProvider } from "./context";
+import './App.scss';
 
 function App() {
   return (
-    <>
-      <ThemeProvider>
-        <BrowserRouter>
-          <Header />
-          <AppRoutes />
-          <Footer />
-        </BrowserRouter>
-      </ThemeProvider>
-    </>
+    <AppProvider>
+      <BrowserRouter>
+        <Header />
+        <AppRoutes />
+        <Footer />
+      </BrowserRouter>
+    </AppProvider>
   )
 }
 

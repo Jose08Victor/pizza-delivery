@@ -1,13 +1,9 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../context";
+import { AppContext } from "../../context";
 import "./style.scss"
 import { Link } from "react-router-dom";
 const CartProducts = () => {
-  const { theme, setTheme }: any = useContext(ThemeContext);
-
-  const handleIncreaseQuantity = (product: any): void => setTheme([...theme], product.quantity++);
-  const handleDecreaseQuantity = (product: any): void => product.quantity !== 1 ? setTheme([...theme], product.quantity--) : setTheme([...theme]);
-  const handleRemoveTheOrder = (product: any): void => setTheme([...theme], product.onAList = false);
+  const { pizzaData, handleQuantityChange, handleListChange } = useContext(AppContext);
 
   let totalPrice: number = 0;
 
@@ -16,7 +12,7 @@ const CartProducts = () => {
       <section>
         <ul className="added-order">
           {
-            theme.map((product: any) => {
+            pizzaData.map((product) => {
               if (product.onAList === true) {
                 totalPrice += product.price * product.quantity
                 return (
@@ -29,11 +25,11 @@ const CartProducts = () => {
 
                     <div className="order-price">
                       <div>
-                        <button onClick={() => handleIncreaseQuantity(product)}>+</button>
+                        <button onClick={() => handleQuantityChange(product, "increase")}>+</button>
 
                         <span>{product.quantity}</span>
 
-                        <button onClick={() => handleDecreaseQuantity(product)}>−</button>
+                        <button onClick={() => handleQuantityChange(product, "decrease")}>−</button>
                       </div>
 
                       <p>
@@ -44,7 +40,7 @@ const CartProducts = () => {
                         })}
                       </p>
 
-                      <button className="remove-btn" onClick={() => handleRemoveTheOrder(product)}>Remover Pedido</button>
+                      <button className="remove-btn" onClick={() => handleListChange(product, "remove")}>Remover Pedido</button>
                     </div>
                   </li>
                 )

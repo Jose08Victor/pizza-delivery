@@ -1,16 +1,9 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../context";
+import { AppContext } from "../../context";
 import "./style.scss";
 
 export const Home = () => {
-  const { theme, setTheme }: any = useContext(ThemeContext)
-
-  const handleIncreaseQuantity = (product: any): void => setTheme([...theme], product.quantity++);
-
-  const handleDecreaseQuantity = (product: any): void =>
-    product.quantity !== 1 ? setTheme([...theme], product.quantity--) : setTheme([...theme]);
-
-  const handleAddTheOrder = (product: any): void => setTheme([...theme], product.onAList = true);
+  const { pizzaData, handleQuantityChange, handleListChange } = useContext(AppContext);
 
   return (
     <main>
@@ -18,9 +11,9 @@ export const Home = () => {
 
       <ul className="pizza-options">
         {
-          theme.map((product: any, index: any) => {
+          pizzaData.map((product) => {
             return (
-              <li key={index}>
+              <li key={product.id}>
                 <div className="order-item">
                   <h3>{product.name}</h3>
 
@@ -40,14 +33,14 @@ export const Home = () => {
 
                   <div className="add-order">
                     <div>
-                      <button onClick={() => { handleIncreaseQuantity(product) }}>+</button>
+                      <button onClick={() => handleQuantityChange(product, "increase") }>+</button>
 
                       <span>{product.quantity}</span>
 
-                      <button onClick={() => { handleDecreaseQuantity(product) }}>−</button>
+                      <button onClick={() => handleQuantityChange(product, "decrease") }>−</button>
                     </div>
 
-                    <button className="add-btn" onClick={() => { handleAddTheOrder(product) }}>Adicionar Pedido</button>
+                    <button className="add-btn" onClick={() => handleListChange(product, "add") }>Adicionar Pedido</button>
                   </div>
                 </div>
               </li>

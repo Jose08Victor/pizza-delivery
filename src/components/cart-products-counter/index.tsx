@@ -2,18 +2,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { ThemeContext } from "../../context";
+import { AppContext } from "../../context";
 import "./style.scss";
 
 export const CartProductsCounter = () => {
-  const { theme }: any = useContext(ThemeContext);
+  const { pizzaData } = useContext(AppContext);
 
   let counter: number = 0;
 
-  theme.map((product: any) => {
-    if (product.onAList === true) {
-      counter++
-    }
+  pizzaData.map((product) => {
+    if (product.onAList === true) counter++;
   })
 
   return (
