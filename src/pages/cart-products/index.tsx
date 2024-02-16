@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { AppContext } from "../../context";
 import "./style.scss"
 import { Link } from "react-router-dom";
+import { useAppContext } from "../../hooks/useAppContext";
+
 const CartProducts = () => {
-  const { pizzaData, handleQuantityChange, handleListChange } = useContext(AppContext);
+  const { pizzaData, handleQuantityChange, handleListChange } = useAppContext();
 
   let totalPrice: number = 0;
 

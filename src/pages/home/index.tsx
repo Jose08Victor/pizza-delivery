@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { AppContext } from "../../context";
 import "./style.scss";
+import { useAppContext } from "../../hooks/useAppContext";
 
 export const Home = () => {
-  const { pizzaData, handleQuantityChange, handleListChange } = useContext(AppContext);
+  const { pizzaData, handleQuantityChange, handleListChange } = useAppContext();
 
   return (
     <main>
@@ -33,14 +32,14 @@ export const Home = () => {
 
                   <div className="add-order">
                     <div>
-                      <button onClick={() => handleQuantityChange(product, "increase") }>+</button>
+                      <button onClick={() => handleQuantityChange(product, "increase")}>+</button>
 
                       <span>{product.quantity}</span>
 
-                      <button onClick={() => handleQuantityChange(product, "decrease") }>−</button>
+                      <button onClick={() => handleQuantityChange(product, "decrease")}>−</button>
                     </div>
 
-                    <button className="add-btn" onClick={() => handleListChange(product, "add") }>Adicionar Pedido</button>
+                    <button className="add-btn" onClick={() => handleListChange(product, "add")}>Adicionar Pedido</button>
                   </div>
                 </div>
               </li>
