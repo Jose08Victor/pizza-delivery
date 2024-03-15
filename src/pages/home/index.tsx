@@ -1,8 +1,15 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../store/reducers';
+import { incrementQuantity, decrementQuantity, addToCart } from '../../store/actions';
 import "./style.scss";
-import { useAppContext } from "../../hooks/useAppContext";
 
 export const Home = () => {
-  const { pizzaData, handleQuantityChange, handleListChange } = useAppContext();
+  const products = useSelector((state: RootState) => state.products);
+  const dispatch = useDispatch();
+
+  const handleIncrement = (id: number) => dispatch(incrementQuantity(id))
+  const handleDecrement = (id: number) => dispatch(decrementQuantity(id));
+  const handleAddToCart = (id: number) => dispatch(addToCart(id));
 
   return (
     <main>
@@ -10,7 +17,7 @@ export const Home = () => {
 
       <ul className="pizza-options">
         {
-          pizzaData.map((product) => {
+          products.map((product) => {
             return (
               <li key={product.id}>
                 <div className="order-item">
@@ -32,14 +39,14 @@ export const Home = () => {
 
                   <div className="add-order">
                     <div>
-                      <button onClick={() => handleQuantityChange(product, "increase")}>+</button>
+                      <button onClick={() => handleIncrement(product.id)}>+</button>
 
                       <span>{product.quantity}</span>
 
-                      <button onClick={() => handleQuantityChange(product, "decrease")}>−</button>
+                      <button onClick={() => handleDecrement(product.id)}>−</button>
                     </div>
 
-                    <button className="add-btn" onClick={() => handleListChange(product, "add")}>Adicionar Pedido</button>
+                    <button className="add-btn" onClick={() => handleAddToCart(product.id)}>Adicionar Pedido</button>
                   </div>
                 </div>
               </li>

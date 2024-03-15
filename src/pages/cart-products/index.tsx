@@ -1,9 +1,19 @@
-import "./style.scss"
 import { Link } from "react-router-dom";
-import { useAppContext } from "../../hooks/useAppContext";
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../store/reducers';
+import { removeFromCart, incrementQuantity, decrementQuantity } from '../../store/actions';
+import "./style.scss";
 
 const CartProducts = () => {
-  const { pizzaData, handleQuantityChange, handleListChange } = useAppContext();
+  const cart = useSelector((state: RootState) => state.cart);
+  const products = useSelector((state: RootState) => state.products);
+  const dispatch = useDispatch();
+
+  const handleRemoveFromCart = (id: number) => dispatch(removeFromCart(id));
+
+  const handleIncrement = (id: number) => dispatch(incrementQuantity(id));
+
+  const handleDecrement = (id: number) => dispatch(decrementQuantity(id));
 
   let totalPrice: number = 0;
 
@@ -12,39 +22,40 @@ const CartProducts = () => {
       <section>
         <ul className="added-order">
           {
-            pizzaData.map((product) => {
-              if (product.onAList === true) {
-                totalPrice += product.price * product.quantity
-                return (
-                  <li key={product.id}>
-                    <div className="order-item">
-                      <h3>{product.name}</h3>
+            cart.map((product) => {
+              return (
+                <li key={product.id}>
+                  <div className="order-item">
+                    <h3>{product.name}</h3>
 
-                      <img src={product.image} alt={product.name} />
-                    </div>
+                    <img src={product.image} alt={product.name} />
+                  </div>
 
-                    <div className="order-price">
-                      <div>
-                        <button onClick={() => handleQuantityChange(product, "increase")}>+</button>
+                  {products.map((e) => {
+                    if (e.id === product.id) totalPrice += product.price * product.quantity
+                    if (e.id === product.id) return (
+                      <div key={e.id} className="order-price">
+                        <div>
+                          <button onClick={() => handleIncrement(product.id)}>+</button>
 
-                        <span>{product.quantity}</span>
+                          <span>{product.quantity}</span>
 
-                        <button onClick={() => handleQuantityChange(product, "decrease")}>−</button>
-                      </div>
+                          <button onClick={() => handleDecrement(product.id)}>−</button>
+                        </div>
 
-                      <p>
-                        {(product.price * product.quantity).toLocaleString("pt-br", {
-                          minimumFractionDigits: 2,
-                          style: "currency",
-                          currency: "BRL",
-                        })}
-                      </p>
+                        <p>
+                          {(product.price * product.quantity).toLocaleString("pt-br", {
+                            minimumFractionDigits: 2,
+                            style: "currency",
+                            currency: "BRL",
+                          })}
+                        </p>
 
-                      <button className="remove-btn" onClick={() => handleListChange(product, "remove")}>Remover Pedido</button>
-                    </div>
-                  </li>
-                )
-              }
+                        <button className="remove-btn" onClick={() => handleRemoveFromCart(product.id)}>Remover Pedido</button>
+                      </div>)
+                  })}
+                </li>
+              )
             })
           }
         </ul>
