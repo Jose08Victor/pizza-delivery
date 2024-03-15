@@ -1,19 +1,20 @@
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { AppProvider } from './context';
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./pages";
+import { Provider } from 'react-redux';
+import store from './store';
 import './App.scss';
 
 function App() {
   return (
-    <AppProvider>
-      <BrowserRouter>
-        <Header />
-        <AppRoutes />
-        <Footer />
-      </BrowserRouter>
-    </AppProvider>
+    <Provider store={store}>
+        <BrowserRouter>
+          <Header />
+          <AppRoutes />
+          <Footer />
+        </BrowserRouter>
+    </Provider>
   )
 }
 
