@@ -1,18 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { AppContext } from "../../context";
+import { useSelector } from "react-redux";
+import { RootState } from '../../store/reducers';
 import "./style.scss";
 
 export const CartProductsCounter = () => {
-  const { pizzaData } = useContext(AppContext);
-
-  let counter: number = 0;
-
-  pizzaData.map((product) => {
-    if (product.onAList === true) counter++;
-  })
+  const cart = useSelector((state: RootState) => state.cart);
 
   return (
     <div className="products-list">
@@ -21,7 +15,7 @@ export const CartProductsCounter = () => {
 
         <FontAwesomeIcon icon={faCartPlus} />
 
-        <span>{counter}</span>
+        <span>{cart.length}</span>
       </NavLink>
     </div>
   );
